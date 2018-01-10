@@ -31,7 +31,7 @@ public class loginController {
             //登录成功记录登陆者的信息
             LoginInfo loginInfo = new LoginInfo();
             loginInfo.setUserid(user.getUserId());
-            loginInfo.setIp("192.168.1.103");
+            loginInfo.setIp(msUtil.getIp2(request));
             SimpleDateFormat df = new SimpleDateFormat("yyyy-mm-dd hh:ms:ss");
             Date date = new Date() ;
             loginInfo.setTime(date);
