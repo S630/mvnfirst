@@ -32,11 +32,11 @@
 				<td></td>
 			</tr>
 			<tr>
-			<td></td>
-				<td>
-				
+			    <td></td>
+				<td>©2018MYSTUDY
 				</td>
-				<td></td>
+				<td>
+				</td>
 			</tr>
 		</table>
 
