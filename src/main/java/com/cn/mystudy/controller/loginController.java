@@ -38,6 +38,7 @@ public class loginController {
             this.iuserService.insert_loginInfo(loginInfo);
             return "showUser";
         }
-        return "error/Error";
+        //return "error/Error";
+        return "readme";
     }
 }
