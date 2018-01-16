@@ -27,6 +27,7 @@
     <script type="text/javascript" src="./topjui/js/locale/topjui.lang.zh_CN.js"></script>
     <!-- 首页js -->
     <script type="text/javascript" src="./static/public/js/topjui.index.js" charset="utf-8"></script>
+
 </head>
 <body>
 	<h2>Hello World!</h2>
@@ -60,6 +61,7 @@
 
 	</form>
 	
+	<a id="btn" href="login.html" class="easyui-linkbutton" data-options="iconCls:'icon-search'">login页面</a>
 	<a id="btn" href="#" class="easyui-linkbutton" data-options="iconCls:'icon-search'">easyui确认</a>
 	<div style="padding:5px;background:#fafafa;width:500px;border:1px solid #ccc">
 					<a href="#" class="easyui-linkbutton" iconCls="icon-cancel">Cancel</a>
