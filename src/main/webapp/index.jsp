@@ -9,6 +9,24 @@
 <link rel="stylesheet" type="text/css" href="../js/jquery-easyui-1.5/theme/default/easyui.css"></link>
 <link rel="stylesheet" type="text/css" href="../js/jquery-easyui-1.5/theme/icon.css"></link>
 
+<!-- 浏览器标签图片 -->
+    <link rel="shortcut icon" href="./topjui/image/favicon.ico"/>
+    <!-- TopJUI框架样式 -->
+    <link type="text/css" href="./topjui/css/topjui.core.min.css" rel="stylesheet">
+    <link type="text/css" href="./topjui/themes/default/topjui.red.css" rel="stylesheet" id="dynamicTheme"/>
+    <!-- FontAwesome字体图标 -->
+    <link type="text/css" href="./static/plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet"/>
+    <!-- jQuery相关引用 -->
+    <script type="text/javascript" src="./static/plugins/jquery/jquery.min.js"></script>
+    <script type="text/javascript" src="./static/plugins/jquery/jquery.cookie.js"></script>
+    <!-- TopJUI框架配置 -->
+    <script type="text/javascript" src="./static/public/js/topjui.config.js"></script>
+    <!-- TopJUI框架核心 -->
+    <script type="text/javascript" src="./topjui/js/topjui.core.min.js"></script>
+    <!-- TopJUI中文支持 -->
+    <script type="text/javascript" src="./topjui/js/locale/topjui.lang.zh_CN.js"></script>
+    <!-- 首页js -->
+    <script type="text/javascript" src="./static/public/js/topjui.index.js" charset="utf-8"></script>
 </head>
 <body>
 	<h2>Hello World!</h2>
