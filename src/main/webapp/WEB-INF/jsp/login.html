@@ -9,7 +9,7 @@
     <meta name="description" content='TopJUI前端框架，基于最新版EasyUI前端框架构建，纯HTML调用功能组件，不用写JS代码的EasyUI，专注你的后端业务开发！'/>
     <title>TopJUI前端框架 - 用户登录</title>
     <!-- 浏览器标签图片 -->
-    <link rel="shortcut icon" href="./topjui/image/favicon.ico"/>
+    <link rel="shortcut icon" href="../topjui/image/favicon.ico"/>
     <link rel="stylesheet" href="../static/plugins/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="../static/plugins/font-awesome/css/font-awesome.min.css">
     <style type="text/css">
@@ -128,7 +128,7 @@
         </div>
         <div class="login-content ">
             <div class="form">
-                <form id="modifyPassword" class="form-horizontal" action="login/logincheck" method="GET">
+                <form id="modifyPassword" class="form-horizontal" action="/login/logincheck" method="POST">
                     <input type="hidden" id="referer" name="referer" value="${param.referer}">
                     <div class="form-group">
                         <div class="col-xs-10 col-xs-offset-1">
@@ -232,7 +232,7 @@
                 $.ajax({
                     type: 'POST',
                     //url: '/json/response/login.json',
-                    url: 'login/logincheck',
+                    url: 'http://localhost:8080/mvnfirst/login/logincheck',
                     contentType: "application/json; charset=utf-8",
                     data: JSON.stringify(formData),
                     success: function (data) {

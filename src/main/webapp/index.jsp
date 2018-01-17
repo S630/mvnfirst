@@ -3,11 +3,11 @@
 <html>
 <head>
 <!-- easyui 前端框架 -->
-<script type="text/javascript" src="../js/jquery-easyui-1.5/jquery.easyui.min.js"></script>
-<script type="text/javascript" src="../js/jquery-easyui-1.5/jquery.min.js"></script>
-<script type="text/javascript" src="../js/jquery-easyui-1.5/locale/easyui-lang-zh_CN.js"></script>
-<link rel="stylesheet" type="text/css" href="../js/jquery-easyui-1.5/theme/default/easyui.css"></link>
-<link rel="stylesheet" type="text/css" href="../js/jquery-easyui-1.5/theme/icon.css"></link>
+<script type="text/javascript" src="./js/jquery-easyui-1.5/jquery.easyui.min.js"></script>
+<script type="text/javascript" src="./js/jquery-easyui-1.5/jquery.min.js"></script>
+<script type="text/javascript" src="./js/jquery-easyui-1.5/locale/easyui-lang-zh_CN.js"></script>
+<link rel="stylesheet" type="text/css" href="./js/jquery-easyui-1.5/themes/default/easyui.css"></link>
+<link rel="stylesheet" type="text/css" href="./js/jquery-easyui-1.5/themes/icon.css"></link>
 
 <!-- 浏览器标签图片 -->
     <link rel="shortcut icon" href="./topjui/image/favicon.ico"/>
@@ -33,7 +33,7 @@
 	<h2>Hello World!</h2>
 	<h2>WELCOM TO MY STUDY SYSTEM </h2>
 
-	<form action="login/logincheck">
+	<form action="login/logincheck" method="POST">
 		<table weight="80%" border="solid 1px">
 			<tr>
 				<td>用户名：</td>
