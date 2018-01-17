@@ -8,6 +8,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+
 import com.cn.mystudy.model.User;
 import com.cn.mystudy.model.LoginInfo;
 import com.cn.mystudy.service.IUserService;
@@ -20,7 +22,7 @@ public class loginController {
     private IUserService iuserService;
     private MSUtil msUtil;
 
-    @RequestMapping("/logincheck")
+    @RequestMapping(value="/logincheck",method=RequestMethod.POST)
     public String logincheck(HttpServletRequest request, Model model) {
         boolean loginflag = false;
         int userId = Integer.parseInt(request.getParameter("id"));

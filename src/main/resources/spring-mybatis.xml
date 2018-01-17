@@ -55,6 +55,23 @@
         <property name="dataSource" ref="dataSource" />  
     </bean>  
     
-
-	
+	<bean class="org.springframework.web.servlet.handler.SimpleUrlHandlerMapping">  
+	     <property name="urlMap">  
+	         <map>  
+	              <entry key="/**/**" value="myResourceHandler" />  
+	         </map>  
+	     </property>  
+	     <property name="order" value="100000" />         
+	</bean>  
+	<bean id="myResourceHandler" name="myResourceHandler"  
+	      class="org.springframework.web.servlet.resource.ResourceHttpRequestHandler">  
+	      <property name="locations" value="/**/**" />  
+	      <property name="supportedMethods">  
+	         <list>  
+	            <value>GET</value>  
+	            <value>HEAD</value>  
+	            <value>POST</value>  
+	         </list>  
+	     </property>
+	</bean> 
 </beans> 
