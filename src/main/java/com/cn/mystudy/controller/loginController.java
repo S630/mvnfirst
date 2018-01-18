@@ -4,6 +4,8 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -23,9 +25,13 @@ public class loginController {
     private MSUtil msUtil;
 
     @RequestMapping(value="/logincheck",method=RequestMethod.POST)
-    public String logincheck(HttpServletRequest request, Model model) {
+    public String logincheck(HttpServletRequest request,HttpServletResponse response, Model model) {
         boolean loginflag = false;
-        int userId = Integer.parseInt(request.getParameter("id"));
+        String passwd = request.getParameter("passwd");
+        String uid = request.getParameter("id");
+        System.out.println("passwd"+passwd);
+        System.out.println("uid"+uid);
+        int userId = Integer.parseInt((String) (uid == null ? "0" : uid));
         User user = this.iuserService.getUserById(userId);
         if (user != null) {
         	System.out.println("now user:"+user.getName());

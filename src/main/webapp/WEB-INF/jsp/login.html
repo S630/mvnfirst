@@ -234,7 +234,7 @@
                     //url: '/json/response/login.json',
                     url: 'http://localhost:8080/mvnfirst/login/logincheck',
                     contentType: "application/json; charset=utf-8",
-                    data: JSON.stringify(formData),
+                    data: formData,  //JSON.stringify(formData)
                     success: function (data) {
                         if (data.statusCode == 200) {
                             //location.href = '/system/index/index?portal=${portal}';
