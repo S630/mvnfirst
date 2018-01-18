@@ -1,7 +1,11 @@
 package com.cn.mystudy.controller;
 
+import java.io.IOException;
+import java.io.PrintWriter;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -13,6 +17,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.cn.mystudy.model.User;
+import com.alibaba.fastjson.JSONArray;
+import com.alibaba.fastjson.JSONObject;
 import com.cn.mystudy.model.LoginInfo;
 import com.cn.mystudy.service.IUserService;
 import com.cn.mystudy.util.MSUtil;
@@ -25,12 +31,12 @@ public class loginController {
     private MSUtil msUtil;
 
     @RequestMapping(value="/logincheck",method=RequestMethod.POST)
-    public String logincheck(HttpServletRequest request,HttpServletResponse response, Model model) {
-        boolean loginflag = false;
+    public void logincheck(HttpServletRequest request,HttpServletResponse response, Model model) {
+    	boolean loginflag = false;
+    	String statuscode = "0";
+    	String message = "";
         String passwd = request.getParameter("passwd");
         String uid = request.getParameter("id");
-        System.out.println("passwd"+passwd);
-        System.out.println("uid"+uid);
         int userId = Integer.parseInt((String) (uid == null ? "0" : uid));
         User user = this.iuserService.getUserById(userId);
         if (user != null) {
@@ -44,9 +50,34 @@ public class loginController {
             Date date = new Date() ;
             loginInfo.setTime(date);
             this.iuserService.insert_loginInfo(loginInfo);
-            return "showUser";
+            statuscode = "200";
+//            return "showUser";
+        }else{
+        	statuscode ="100";
+        	message = "用户["+ user +"]不存在!";
         }
         //return "error/Error";
-        return "readme";
+//        return "readme";
+        PrintWriter out;
+		try {
+			out = response.getWriter();
+			User user1 = new User();
+			user1.setName("aa");
+			User user2 = new User();
+			user2.setName("bb");
+			
+			JSONArray array = new JSONArray();
+			array.add(user1);
+			array.add(user2);
+			JSONObject object = new JSONObject();
+			object.put("statuscode", statuscode);
+			object.put("msg", message);
+			object.put("referer", "index.html");
+			System.out.println(object);
+			out.println(object);
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+        
     }
 }
