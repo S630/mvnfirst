@@ -1,4 +1,4 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+﻿<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
   <modelVersion>4.0.0</modelVersion>
   <groupId>org.mvnfirst</groupId>
@@ -8,7 +8,7 @@
   <name>mvnfirst Maven Webapp</name>
   <url>http://maven.apache.org</url>
   <properties>  
-        <!-- spring版本号 -->  
+        <!-- spring版本号   -->  
         <spring.version>4.0.2.RELEASE</spring.version>  
         <!-- mybatis版本号 -->  
         <mybatis.version>3.2.6</mybatis.version>  
