@@ -3,13 +3,12 @@ package com.cn.mystudy.controller;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.text.SimpleDateFormat;
-import java.util.ArrayList;
 import java.util.Date;
-import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.sun.istack.internal.logging.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -29,6 +28,7 @@ public class loginController {
     @Autowired
     private IUserService iuserService;
     private MSUtil msUtil;
+    Logger logger = Logger.getLogger(loginController.class);
 
     @RequestMapping(value="/logincheck",method=RequestMethod.POST)
     public void logincheck(HttpServletRequest request,HttpServletResponse response, Model model) {
@@ -73,7 +73,7 @@ public class loginController {
 			object.put("statuscode", statuscode);
 			object.put("msg", message);
 			object.put("referer", "index.html");
-			System.out.println(object);
+			logger.info(object.toJSONString());
 			out.println(object);
 		} catch (IOException e) {
 			e.printStackTrace();
